@@ -6,22 +6,24 @@
           {
             "id": "clinic_123",
             "name": "Clinica 25 de Mayo",
-            "address": "123 Main St, Cityville",
+            "address": "Av. 25 de Mayo 2685",
             "doctors": [
               {
                 "id": "doctor_1",
-                "name": "Dr. Lucia Smith"
+                "name": "Dr. Lucia Smith",
+                "available": false
               }
             ]
           },
           {
             "id": "clinic_456",
             "name": "Hospital de la Comunidad",
-            "address": "456 Elm St, Cityville",
+            "address": "Córdoba 1792",
             "doctors": [
               {
                 "id": "doctor_2",
-                "name": "Dr. Juan Lopez"
+                "name": "Dr. Juan Lopez",
+                "available": true
               }
             ]
           }
@@ -34,11 +36,12 @@
           {
             "id": "clinic_789",
             "name": "Clinica de dermatología",
-            "address": "789 Maple Ave, Cityville",
+            "address": "Av. Colon 3715",
             "doctors": [
               {
                 "id": "doctor_3",
-                "name": "Dr. Emilia White"
+                "name": "Dr. Emilia White",
+                "available": true
               }
             ]
           }
@@ -51,15 +54,17 @@
           {
             "id": "clinic_101",
             "name": "Clinica del niño",
-            "address": "101 Oak St, Cityville",
+            "address": "San Martin 5725",
             "doctors": [
               {
                 "id": "doctor_4",
-                "name": "Dr. Sara Aguilar"
+                "name": "Dr. Sara Aguilar",
+                "available": true
               },
               {
                 "id": "doctor_5",
-                "name": "Dr. Miguel Garcia"
+                "name": "Dr. Miguel Garcia",
+                "available": false
               }
             ]
           }

@@ -15,6 +15,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { ContactComponent } from './contact/contact.component';
 import { TurnosComponent } from './turnos/turnos.component';
 import { TurnosService } from './turnos.service';
+import { ReservarComponent } from './reservar/reservar.component';
 
 @NgModule({
   imports: [
@@ -52,6 +53,7 @@ import { TurnosService } from './turnos.service';
     ProfileComponent,
     ContactComponent,
     TurnosComponent,
+    ReservarComponent,
   ],
   bootstrap: [
     AppComponent

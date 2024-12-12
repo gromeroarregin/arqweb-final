@@ -58,4 +58,8 @@ export class TurnosComponent implements OnInit{
     }
   }
 
+  onEvent(spec: specialization, loc: medical_location, doc: doctor){
+    window.alert(`Se ha realizado la reserva con el ${doc.name}, en ${loc.name} para una consulta de ${spec.name}`);
+  }
+
 }

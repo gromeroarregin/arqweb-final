@@ -5,11 +5,12 @@
     <div class="divider"></div>
     <div class="loc" *ngIf="spec.id == selectedSpec">
       <div *ngFor="let loc of locations | async">
-      <button (click)="selectLoc(loc.id)" class="button fancy-button-loc">{{ loc.name }}</button>
+      <button (click)="selectLoc(loc.id)" class="button fancy-button-loc">{{ loc.name }}, Direccion: {{ loc.address }}</button>
       <div class="divider"></div>
         <div class="doc" *ngIf="loc.id == selectedLoc">
-          <div *ngFor="let doc of doctors | async">
-            <button class="button fancy-button-doc">{{ doc.name }}</button>
+          <div class="row" *ngFor="let doc of doctors | async">
+            <h2 style="color: #1976d2">{{ doc.name }}</h2>
+            <app-reservar [doc]="doc" (notify)="onEvent(spec, loc, doc)"></app-reservar>
             <div class="divider"></div>
           </div>
         </div>

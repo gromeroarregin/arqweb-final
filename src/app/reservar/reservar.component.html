@@ -1,0 +1,5 @@
+<p *ngIf="doc">
+    <button type="button fancy-button" (click)="notify.emit()" [disabled]="!doc.available">
+      Reservar
+    </button>
+</p>

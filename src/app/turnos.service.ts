@@ -5,6 +5,7 @@ import { map, Observable } from 'rxjs';
 export interface doctor{
   id: string;
   name: string;
+  available: boolean;
 }
 
 export interface medical_location{
