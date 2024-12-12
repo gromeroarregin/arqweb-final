@@ -45,9 +45,9 @@ Contact
 -Muestra información de interés para los usuarios
 
 
-Sacar turno (IDEAS)
+Sacar turno
 eleccion sucesiva:  especializacion --> sucursales --> medicos
-JSON con los datos necesarios (usar *ngfor con *ngif para mostrar solo los que queremos mostrar)
+un Arbol JSON con los datos necesarios (usar *ngfor con *ngif para mostrar solo los que queremos mostrar)
 usar INPUT para informar a cada componente sucesivo cual fue la eleccion anterior del usuario
 usar OUTPUT para informar el paso en el que está el usuario ("Elija una especializacion", "Elija una sucursal", etc.)
 --DIRECTIVA *ngfor, peticiones GET con servicio, INPUT, OUTPUT 

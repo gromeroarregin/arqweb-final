@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TurnosService, medical_location } from '../turnos.service';
+import { TurnosService, medical_location, specialization, doctor } from '../turnos.service';
 import { Observable } from 'rxjs'
 
 @Component({
@@ -9,12 +9,14 @@ import { Observable } from 'rxjs'
 })
 export class TurnosComponent implements OnInit{
 
-  specialization!: Observable<{ id: string, name: string }[]>
+  specialization!: Observable<specialization[]>
   locations!: Observable<medical_location[]>
+  doctors!: Observable<doctor[]>
 
   constructor(private turnos: TurnosService){
     this.getSpecializations();
     this.getLocation('cardiology');
+    this.getDoctor('cardiology', 'clinic_123');
   }
 
   ngOnInit(): void {
@@ -27,6 +29,10 @@ export class TurnosComponent implements OnInit{
 
   getLocation(spec: string){
     this.locations = this.turnos.getLocations(spec);
+  }
+
+  getDoctor(spec: string, loc: string){
+    this.doctors = this.turnos.getDoctors(spec, loc);
   }
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserloginService } from '../userlogin.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-welcome',
@@ -8,9 +9,10 @@ import { UserloginService } from '../userlogin.service';
 })
 export class WelcomeComponent implements OnInit{
 
-  constructor(public loginService: UserloginService){}
+  constructor(public loginService: UserloginService, public title: Title){}
 
   ngOnInit(): void {
+    this.title.setTitle('Gestión de Turnos');
   }
 
 }
