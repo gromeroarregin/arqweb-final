@@ -1,0 +1,70 @@
+userLoginService
+
+-implementa atributos del usuario y un flag para indicar si está iniciada la sesión o no
+-Implementa las funciones para login, logout y getters
+
+
+User login
+
+-Utiliza un formulario para que el usuario ingrese sus datos y un botón para enviar               --REACTIVEFORM, EVENT BINDING--
+-Envía los datos por console.log si es exitoso y regresa a la página principal                    --ROUTERLINK--
+-Verifica que los campos no estén vacíos al enviar
+
+
+Bottom bar
+
+-Implementa su propio archivo CSS para personalizar los botones sin alterar el estilo global
+-Los botones redirigen al componente correspondiente                                              --ROUTERLINK--
+-Los botones "Sacar Turno" y "Perfil" Se activan y desactivan respecto al login                   --PROPERTY BINDING--
+-Utiliza la instancia del userLoginService para preguntar el estado del login
+
+
+Top bar
+
+-Utiliza instancias de userLoginService y Auth0                                                   --INTEGRACIÓN DE AUTH0--
+-Permite el inicio de sesión simulado o a través de Auth0                                         --EVENT BINDING, ROUTERLINK--
+-Utiliza directivas para mostrar el contenido correspondiente segun esté iniciada la sesión o no  --DIRECTIVA *ngif--
+-Muestra el nombre de usuario una vez iniciada la sesión (Sólo userLoginService)                  --STRING INTERPOLATION--
+
+
+Welcome
+
+-Muestra un mensaje de bienvenida, muestra el nombre de usuario si la sesión está iniciada        --STRING INTERPOLATION--
+-Utiliza la instancia del userLoginService para preguntar el estado del login
+
+
+Profile
+
+-Utiliza un formulario para que el usuario ingrese sus datos y un botón para enviar               --REACTIVEFORM, EVENT BINDING--
+-Muestra en forma deshabilitada el nombre de usuario e email                                      --PROPERTY BINDING--
+-Muestra un aviso de cambio de datos y los envía por console.log (No realiza cambios reales!!)
+
+
+Contact
+
+-Muestra información de interés para los usuarios
+
+
+Sacar turno (IDEAS)
+eleccion sucesiva:  especializacion --> sucursales --> medicos
+JSON con los datos necesarios (usar *ngfor con *ngif para mostrar solo los que queremos mostrar)
+usar INPUT para informar a cada componente sucesivo cual fue la eleccion anterior del usuario
+usar OUTPUT para informar el paso en el que está el usuario ("Elija una especializacion", "Elija una sucursal", etc.)
+--DIRECTIVA *ngfor, peticiones GET con servicio, INPUT, OUTPUT 
+
+
+App Module
+
+-Se declaran todas las rutas de routerlink y todos los componentes
+-Se declara userLoginService como "Provider"
+-Se declara AuthModule en "imports" y se detalla el Tenant y App ID de Auth0 correspondiente
+
+
+Notas sobre el proyecto de Angular
+
+-El proyecto se implemento desde cero utilizando el comando "ng new"
+-Se requiere instalar el módulo de Auth0 con NPM
+-Para generar los componentes se utilizó el comando "ng g c" (generate component)
+-Para generar los servicios se utilizó el comando "ng g s" (generate service)
+-Se eliminaron los archivos "spec.ts" generados ya que no se usaron
+-Se utilizó como base el archivo styles.css del tutorial de angular

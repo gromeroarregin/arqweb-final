@@ -1,0 +1,21 @@
+<div class="row">
+
+    <div style="width: 100%;">
+            <a routerLink="/turnos">                                           
+                <button class="button fancy-button" [disabled]="!loginService.isLogged()">Sacar Turno</button>
+            </a>
+    </div>
+
+    <div class="divider"></div>
+
+    <div style="width: 100%;">
+        <a routerLink="/profile">                                           
+              <button class="button fancy-button" [disabled]="!loginService.isLogged()">Perfil</button>
+        </a>
+    </div>
+
+    <div class="divider"></div>
+
+    <a routerLink="/contact" class="button fancy-button">Contacto</a>
+
+</div>

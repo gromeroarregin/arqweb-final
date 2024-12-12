@@ -1,0 +1,37 @@
+.button, button {
+    display: inline-flex;
+    align-items: center;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 20px;                          /* Redondeado de los botones */
+    font-size: 30px;
+    cursor: pointer;
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    width: 100%;                                  /* Ocupar ancho toda la barra */
+    text-align: center;
+    justify-content: center;                      /* Centrar texto */
+  }
+
+  .button:hover, button:hover {
+    opacity: 0.8;
+    font-weight: normal;
+  }
+  
+  .button:disabled, button:disabled, button[disabled] {
+    opacity: 0.5;
+    cursor: auto;
+  }
+  
+  /* Fancy Button */
+  
+  .fancy-button {
+    background-color: white;
+    color: red;
+  }
+  
+  .fancy-button i.material-icons {
+    color: #1976d2;
+    padding-right: 4px;
+  }

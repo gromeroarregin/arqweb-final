@@ -1,0 +1,33 @@
+<h1>Perfil de {{ loginService.getUsername() }}</h1>
+
+<div class="divider"></div>
+
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="Usuario">Usuario</label>
+        <input class="disabled-input" id="Usuario" type="text" formControlName="Usuario">
+    </div>
+    
+    <div>
+        <label for="Email">Email</label>
+        <input class="disabled-input" id="Email" type="text" formControlName="Email">
+    </div>
+
+    <div>
+        <label for="Nombre">Nombre</label>
+        <input id="Nombre" type="text" formControlName="Nombre">
+    </div>
+
+    <div>
+        <label for="Direccion">Direccion</label>
+        <input id="Direccion" type="text" formControlName="Direccion">
+    </div>
+
+    <div>
+        <label for="Telefono">Telefono</label>
+        <input id="Telefono" type="text" formControlName="Telefono">
+    </div>
+    
+      <button class="button" type="submit">Actualizar Datos</button>
+
+</form>

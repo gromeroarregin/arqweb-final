@@ -1,0 +1,18 @@
+<h1>Login</h1>
+
+<div class="divider"></div>
+
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="Usuario">Usuario</label>
+        <input id="Usuario" type="text" formControlName="Usuario">
+      </div>
+    
+      <div>
+        <label for="Email">Email</label>
+        <input id="Email" type="text" formControlName="Email">
+      </div>
+    
+      <button class="button" type="submit">Iniciar sesion</button>
+
+</form>

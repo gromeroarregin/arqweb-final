@@ -1,0 +1,13 @@
+
+<div class="welcome">
+
+    <ng-container *ngIf="loginService.isLogged(); else loggedOutWelcome">   <!--isLogged() == True-->                                       
+        <h1>Bienvenido {{ loginService.getUsername() }}</h1>
+    </ng-container>
+
+    <ng-template #loggedOutWelcome>                                         <!--Else-->
+        <h1>Bienvenido!</h1>
+        <h2>Para sacar turnos por favor iniciar sesión</h2>
+    </ng-template>
+
+</div>

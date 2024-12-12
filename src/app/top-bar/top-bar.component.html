@@ -1,0 +1,50 @@
+<a [routerLink]="['/']">
+  <h1>Inicio</h1>
+</a>
+
+<div class="row">                   
+
+  <!--Login con ReactForm, Se muestra el boton correspondiente si esta logueado o no-->
+  <ng-container *ngIf="loginService.isLogged(); else loggedOutform">   <!--isLogged() == True-->
+    <a [routerLink]="['/']">                                           
+      <button class="button fancy-button" 
+      (click)="loginService.logout()">
+        Cerrar Sesion (ReactForm)</button>
+    </a>
+
+      <div class="divider"></div>
+
+      <p class="p-bar">Logged in as {{ loginService.getUsername() }}</p>
+  </ng-container>
+
+  <ng-template #loggedOutform>                                         <!--Else-->
+    <a routerLink="/login" 
+    class="button fancy-button">Iniciar sesion (ReactForm)</a>
+  </ng-template>
+
+  <div class="divider"></div>
+
+  <!--Login con Auth0, Se muestra el boton correspondiente si esta logueado o no-->
+  <ng-container *ngIf="_auth.isAuthenticated$ | async; else loggedOut"> <!--isAuthenticated() == True-->
+    <button class="button fancy-button"                                  
+    (click)="_auth.logout()">
+      Cerrar Sesion (Auth0)</button>                                    <!--Se muestra el boton correspondiente si esta logueado o no-->
+
+      <div class="divider"></div>
+
+        <p class="p-bar">Logged in Auth0</p>
+  </ng-container>
+
+  <ng-template #loggedOut>                                               <!--Else-->
+    <button class="button fancy-button" 
+    (click)="_auth.loginWithRedirect()">
+    Iniciar Sesion (Auth0)</button>
+  </ng-template>
+</div>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->
