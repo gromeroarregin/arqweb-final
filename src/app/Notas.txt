@@ -45,9 +45,15 @@ Contact
 -Muestra información de interés para los usuarios
 
 
+TurnosService
+Implementa las interfaces necesarias para leer los contenidos del JSON e implementa las funciones GET para obtener datos necesarios
+Todas las especializaciones, ubicaciones para una especializacion especifica, y medicos para una ubicacion y especializacion.
+
+
 Sacar turno
 eleccion sucesiva:  especializacion --> sucursales --> medicos
-un Arbol JSON con los datos necesarios (usar *ngfor con *ngif para mostrar solo los que queremos mostrar)
+Muestra los contenidos en forma de acordeon (expansivo) a traves de *ngIf y *ngFor
+
 usar INPUT para informar a cada componente sucesivo cual fue la eleccion anterior del usuario
 usar OUTPUT para informar el paso en el que está el usuario ("Elija una especializacion", "Elija una sucursal", etc.)
 --DIRECTIVA *ngfor, peticiones GET con servicio, INPUT, OUTPUT 
@@ -56,7 +62,7 @@ usar OUTPUT para informar el paso en el que está el usuario ("Elija una especia
 App Module
 
 -Se declaran todas las rutas de routerlink y todos los componentes
--Se declara userLoginService como "Provider"
+-Se declara userLoginService y TurnosService como "Provider"
 -Se declara AuthModule en "imports" y se detalla el Tenant y App ID de Auth0 correspondiente
 
 
@@ -68,3 +74,10 @@ Notas sobre el proyecto de Angular
 -Para generar los servicios se utilizó el comando "ng g s" (generate service)
 -Se eliminaron los archivos "spec.ts" generados ya que no se usaron
 -Se utilizó como base el archivo styles.css del tutorial de angular
+
+
+
+Cosas a tener en cuenta
+ng containers
+subscribes con async, observables
+accesos al JSON con maps

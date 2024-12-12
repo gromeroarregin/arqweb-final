@@ -20,8 +20,6 @@ export class TurnosComponent implements OnInit{
     this.selectedSpec = "";
     this.selectedLoc = "";
     this.getSpecializations();
-    //this.getLocation('cardiology');
-    //this.getDoctor('cardiology', 'clinic_123');
   }
 
   ngOnInit(): void {
@@ -40,13 +38,24 @@ export class TurnosComponent implements OnInit{
   }
 
   selectSpec(spec: string){
-    this.selectedSpec = spec;
-    this.getLocation(this.selectedSpec);
+    if (this.selectedSpec == spec){
+      this.selectedLoc = "";
+      this.selectedSpec = "";
+    }
+    else{
+      this.selectedSpec = spec;
+      this.getLocation(this.selectedSpec);
+    }
   }
 
   selectLoc(loc: string){
-    this.selectedLoc = loc;
-    this.getDoctor(this.selectedSpec, this.selectedLoc);
+    if (this.selectedLoc == loc){
+      this.selectedLoc = "";
+    }
+    else{
+      this.selectedLoc = loc;
+      this.getDoctor(this.selectedSpec, this.selectedLoc);
+    }
   }
 
 }
