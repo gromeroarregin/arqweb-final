@@ -2,7 +2,7 @@
 
     <div style="width: 100%;">
             <a routerLink="/turnos">                                           
-                <button class="button fancy-button" [disabled]="!loginService.isLogged()">Sacar Turno</button>
+                <button class="button fancy-button" [disabled]="!loginService.isLogged() && !(_auth.isAuthenticated$ | async)">Sacar Turno</button>
             </a>
     </div>
 
@@ -10,7 +10,7 @@
 
     <div style="width: 100%;">
         <a routerLink="/profile">                                           
-              <button class="button fancy-button" [disabled]="!loginService.isLogged()">Perfil</button>
+              <button class="button fancy-button" [disabled]="!loginService.isLogged() && !(_auth.isAuthenticated$ | async)">Perfil</button>
         </a>
     </div>
 

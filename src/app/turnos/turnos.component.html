@@ -1,11 +1,11 @@
 <h1>Sacar Turno</h1>
 
 <div class="shipping-item" *ngFor="let spec of specialization | async">
-    <span>{{ spec.name}}</span>
+    <button class="button fancy-button">{{ spec.name }}</button>
     <div class="shipping-item" *ngFor="let loc of locations | async">
-      <span>{{ loc.name }}</span>
+      <button class="button fancy-button">{{ loc.name }}</button>
       <div class="shipping-item" *ngFor="let doc of doctors | async">
-        <span>{{ doc.name }}</span>
+        <button class="button fancy-button">{{ doc.name }}</button>
       </div>
     </div>
 </div>

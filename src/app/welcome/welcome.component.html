@@ -1,8 +1,8 @@
 
 <div class="welcome">
 
-    <ng-container *ngIf="loginService.isLogged(); else loggedOutWelcome">   <!--isLogged() == True-->                                       
-        <h1>Bienvenido {{ loginService.getUsername() }}</h1>
+    <ng-container *ngIf="(loginService.isLogged() || (_auth.isAuthenticated$ | async)); else loggedOutWelcome">   <!--isLogged() == True-->                                       
+        <h1>Bienvenido {{ getName() }}</h1>
     </ng-container>
 
     <ng-template #loggedOutWelcome>                                         <!--Else-->

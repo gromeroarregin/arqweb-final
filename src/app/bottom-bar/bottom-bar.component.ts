@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '@auth0/auth0-angular';
 import { UserloginService } from '../userlogin.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { UserloginService } from '../userlogin.service';
 })
 export class BottomBarComponent implements OnInit{
 
-  constructor(public loginService: UserloginService){}
+  constructor(public _auth: AuthService, public loginService: UserloginService){}
 
   ngOnInit(): void {
   }

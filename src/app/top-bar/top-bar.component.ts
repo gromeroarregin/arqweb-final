@@ -7,11 +7,19 @@ import { UserloginService } from '../userlogin.service';
   templateUrl: './top-bar.component.html',
   styleUrls: ['./top-bar.component.css']
 })
+
+
+
 export class TopBarComponent implements OnInit{
-  constructor(public _auth:AuthService, public loginService: UserloginService){}    //Inyeccion de servicios de Auth0 y login simulado
+
+  username: any;
+
+  constructor(public _auth: AuthService, public loginService: UserloginService){}    //Inyeccion de servicios de Auth0 y login simulado
 
   ngOnInit(): void {
+    this._auth.user$.subscribe(value => this.username=value?.name)
   }
+
 }
 
 
