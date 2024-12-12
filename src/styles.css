@@ -180,6 +180,18 @@ app-userlogin, app-profile {
   text-align: center;
 }
 
+app-turnos {
+  position: static;
+  top: 35%;
+  left: 50%;
+  padding-left: 2%;
+  padding-top: 2%;
+  padding-right: 15%;
+  justify-content: center;
+  text-align: left;
+  width: 100%;
+}
+
 .row {
   display: flex;
   flex-direction: row;

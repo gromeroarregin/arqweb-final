@@ -10,25 +10,17 @@ import { AuthService } from '@auth0/auth0-angular';
 })
 export class WelcomeComponent implements OnInit{
 
+  username: any;
+
   constructor(public _auth: AuthService, public loginService: UserloginService, public title: Title){}
 
   ngOnInit(): void {
     this.title.setTitle('Gestión de Turnos');
+    this.getUsername();
   }
 
-  getName(): string{
-    if (this._auth.isAuthenticated$){
-      let name: any;
-      this._auth.user$.subscribe(value => name=value?.name);
-      return name;
-    }
-    else
-    if (this.loginService.isLogged()){
-      let name = this.loginService.getUsername();
-      return name;
-    }
-    else
-    return "";
+  async getUsername(){
+    this._auth.user$.subscribe(value => this.username=value?.name)
   }
 
 }

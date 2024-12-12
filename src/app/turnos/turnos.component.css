@@ -1,0 +1,64 @@
+
+
+.button, button {
+    align-items: center;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 10px;                          /* Redondeado de los botones */
+    font-size: 30px;
+    cursor: pointer;
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    width: 100%;                                  /* Ocupar ancho toda la barra */
+    text-align: left;
+    justify-content: left;                      /* Centrar texto */
+  }
+
+  .button:hover, button:hover {
+    opacity: 0.8;
+    font-weight: normal;
+  }
+  
+  .button:disabled, button:disabled, button[disabled] {
+    opacity: 0.5;
+    cursor: auto;
+  }
+  
+  /* Fancy Button */
+  
+  .fancy-button {
+    background-color: lightgray;
+    color: #1976d2;
+    width: 100%;
+  }
+
+  .fancy-button-loc {
+    background-color: rgb(230, 230, 230);
+    color: #1976d2;
+    width: 100%;
+  }
+
+  .fancy-button-doc {
+    background-color: lightgray;
+    color: #1976d2;
+    width: 100%;
+  }
+  
+  .fancy-button i.material-icons {
+    color: #1976d2;
+    padding-right: 4px;
+  }
+
+  .spec {
+    padding-top: 20px;
+    width: 100%;
+  }
+
+  .loc {
+    padding-left: 60px;
+  }
+
+  .doc {
+    padding-left: 90px;
+  }

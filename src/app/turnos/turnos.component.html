@@ -1,11 +1,18 @@
 <h1>Sacar Turno</h1>
 
-<div class="shipping-item" *ngFor="let spec of specialization | async">
-    <button class="button fancy-button">{{ spec.name }}</button>
-    <div class="shipping-item" *ngFor="let loc of locations | async">
-      <button class="button fancy-button">{{ loc.name }}</button>
-      <div class="shipping-item" *ngFor="let doc of doctors | async">
-        <button class="button fancy-button">{{ doc.name }}</button>
+<div class="spec" *ngFor="let spec of specialization | async">
+    <button (click)="selectSpec(spec.id)" class="button fancy-button">{{ spec.name }}</button>
+    <div class="divider"></div>
+    <div class="loc" *ngIf="spec.id == selectedSpec">
+      <div *ngFor="let loc of locations | async">
+      <button (click)="selectLoc(loc.id)" class="button fancy-button-loc">{{ loc.name }}</button>
+      <div class="divider"></div>
+        <div class="doc" *ngIf="loc.id == selectedLoc">
+          <div *ngFor="let doc of doctors | async">
+            <button class="button fancy-button-doc">{{ doc.name }}</button>
+            <div class="divider"></div>
+          </div>
+        </div>
       </div>
     </div>
 </div>

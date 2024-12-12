@@ -13,14 +13,18 @@ export class TurnosComponent implements OnInit{
   locations!: Observable<medical_location[]>
   doctors!: Observable<doctor[]>
 
+  selectedSpec: string;
+  selectedLoc: string;
+
   constructor(private turnos: TurnosService){
+    this.selectedSpec = "";
+    this.selectedLoc = "";
     this.getSpecializations();
-    this.getLocation('cardiology');
-    this.getDoctor('cardiology', 'clinic_123');
+    //this.getLocation('cardiology');
+    //this.getDoctor('cardiology', 'clinic_123');
   }
 
   ngOnInit(): void {
-    
   }
 
   getSpecializations() {
@@ -33,6 +37,16 @@ export class TurnosComponent implements OnInit{
 
   getDoctor(spec: string, loc: string){
     this.doctors = this.turnos.getDoctors(spec, loc);
+  }
+
+  selectSpec(spec: string){
+    this.selectedSpec = spec;
+    this.getLocation(this.selectedSpec);
+  }
+
+  selectLoc(loc: string){
+    this.selectedLoc = loc;
+    this.getDoctor(this.selectedSpec, this.selectedLoc);
   }
 
 }
