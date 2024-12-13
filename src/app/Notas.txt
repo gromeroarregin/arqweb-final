@@ -53,10 +53,14 @@ Todas las especializaciones, ubicaciones para una especializacion especifica, y 
 Sacar turno
 eleccion sucesiva:  especializacion --> sucursales --> medicos
 Muestra los contenidos en forma de acordeon (expansivo) a traves de *ngIf y *ngFor
-
-usar INPUT para informar a cada componente sucesivo cual fue la eleccion anterior del usuario
-usar OUTPUT para informar el paso en el que está el usuario ("Elija una especializacion", "Elija una sucursal", etc.)
+Las especializaciones y ubicaciones se muestran como botones, los medicos se muestran como texto junto con un boton para reservar
+El boton se activa o desactiva de acurdo al estado                                                             --INPUT
+Si se presiona un boton de reservar se recibe una alerta del componente de reservas, y se muestra una ventana  --OUTPUT
 --DIRECTIVA *ngfor, peticiones GET con servicio, INPUT, OUTPUT 
+
+reservar
+Recibe como input un doctor, el cual se evalua su disponibilidad para mostrar el boton activado o desactivado  --INPUT
+Genera un evento al presionar el boton                                                                         --OUTPUT
 
 
 App Module

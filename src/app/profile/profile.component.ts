@@ -53,8 +53,6 @@ export class ProfileComponent implements OnInit{
       this.loginForm.controls['Usuario'].setValue(this.username);
       this.loginForm.controls['Email'].setValue(this.mail);
     });
-    console.log(this.username)
-    console.log(this.mail)
   }
 
 }
